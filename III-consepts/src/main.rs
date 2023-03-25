@@ -1,5 +1,20 @@
 fn main() {
-    II()
+    III()
+}
+
+fn III() {
+
+    input(2, 'k');
+
+    println!("{}",rtrn);
+
+    fn input(x: i32, c: char) {
+        println!("The value of x is: {}", x);
+    }
+
+    fn rtrn() -> String {
+        return "hiloo"
+    }
 }
 
 fn II() {
@@ -44,6 +59,30 @@ fn II() {
     let skull = '☠';
     println!("{}", skull);
 
+    // tuple
+    let tup = (50, true, "hi");
+    let tup:(i32,f32,bool)=(5,5.5,false);
+
+    let (x,y,z) = tup;
+    println!("{}", tup.0);
+    println!("{}", z);
+
+    // array
+
+    let a: [i32;5] = [1, 2, 3, 4, 5];
+
+    let a = [3,4,32,45,234,1,2];
+    a.len();
+
+    let months = ["January", "February", "March", "April", "May", "June", "July",
+        "August", "September", "October", "November", "December"];
+
+    let b = [6;7];
+    for p in a {
+        print!("{} ",p)
+    }
+
+    println!("{}",months[3]);
 }
 
 fn I(){
