@@ -1,20 +1,35 @@
+use std::arch::x86_64::_mm256_madd52hi_epu64;
+
 fn main() {
-    III()
+    IV()
+}
+
+fn IV() {
+    // this is a comment
+    /* this is a block comment*/
 }
 
 fn III() {
 
     input(2, 'k');
 
-    println!("{}",rtrn(true));
+    println!("{}", rtrn(true));
 
     fn input(x: i32, c: char) {
         println!("The value of x is: {}", x);
     }
 
-    fn rtrn(x:bool) ->  String {
-        return x.to_string()
+    fn rtrn(x: bool) -> String {
+        x.to_string()
     }
+
+    let y = {
+        let x = 3;
+        x + 1
+    };
+
+    println!("The value of y is: {}", y);
+
 }
 
 fn II() {
