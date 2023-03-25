@@ -6,14 +6,14 @@ fn III() {
 
     input(2, 'k');
 
-    println!("{}",rtrn);
+    println!("{}",rtrn(true));
 
     fn input(x: i32, c: char) {
         println!("The value of x is: {}", x);
     }
 
-    fn rtrn() -> String {
-        return "hiloo"
+    fn rtrn(x:bool) ->  String {
+        return x.to_string()
     }
 }
 
