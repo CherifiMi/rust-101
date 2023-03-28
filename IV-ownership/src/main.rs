@@ -1,11 +1,59 @@
 use std::ops::Index;
 
 fn main() {
-    II();
+    III();
+}
+
+fn III() {
+
+    let mut s = String::from("hello world");
+
+    let word = first_word(&s);
+
+    println!("{}", word);
+
+    for i in 0..word {
+        println!("{}", s.as_bytes()[i]);
+    }
+
+    fn first_word(s: &String) -> usize {
+        let bytes = s.as_bytes();
+        for (i, &item) in bytes.iter().enumerate(){
+            if item == b' ' {
+                return i;
+            }
+        }
+
+        s.len()
+    }
 }
 
 fn II() {
+    // References
+    {
+        let s1 = String::from("hi");
+        let len = calculate_lin(&s1);
+        println!("{} {}", s1, len);
+        fn calculate_lin(s: &String) -> usize {
+            s.len()
+        }
+    }
 
+    // Mutable References
+    {
+        // you can only have one mutable reference
+        let mut s = String::from("hello");
+
+        {
+            let s1 = &mut s;
+        } // s1 goes out of scope
+
+        change(&mut s);
+
+        fn change(some_string: &mut String) {
+            some_string.push_str(", world");
+        }
+    }
 }
 
 fn I() {
