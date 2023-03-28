@@ -1,3 +1,6 @@
+use std::borrow::Borrow;
+use std::fmt::Debug;
+use std::intrinsics::write_bytes;
 use std::ops::Index;
 
 fn main() {
@@ -5,26 +8,87 @@ fn main() {
 }
 
 fn III() {
+    {
+        let mut s = String::from("hello world");
+        let first = first_word(&s);
+        let second = second_word(&s);
 
-    let mut s = String::from("hello world");
+        println!("first word is { }", &s[0..first_word(&s)]);
+        println!("second word is{ }", &s[second.0..second.1]);
 
-    let word = first_word(&s);
-
-    println!("{}", word);
-
-    for i in 0..word {
-        println!("{}", s.as_bytes()[i]);
-    }
-
-    fn first_word(s: &String) -> usize {
-        let bytes = s.as_bytes();
-        for (i, &item) in bytes.iter().enumerate(){
-            if item == b' ' {
-                return i;
+        fn first_word(s: &String) -> usize {
+            let bytes = s.as_bytes();
+            for (i, &item) in bytes.iter().enumerate() {
+                if item == b' ' {
+                    return i;
+                }
             }
+            s.len()
         }
+        fn second_word(s: &String) -> (usize, usize) {
+            let mut start = 0;
+            let mut end = 0;
 
-        s.len()
+            let bytes = s.as_bytes();
+            for (i, &item) in bytes.iter().enumerate() {
+                if item == b' ' {
+                    if start == 0 {
+                        start = i;
+                        continue;
+                    }
+                    if start != 0 && end == 0 {
+                        end = i;
+                    }
+                }
+            }
+            end = s.len();
+            (start, end)
+        }
+        /*fn index_to_word(word: usize, s: &String) -> String {
+            let mut v: Vec<u8> = Vec::new();
+            for i in 0..word {
+                v.push(s.as_bytes()[i]);
+            }
+            let s = String::from_utf8(v);
+
+            s
+        }*/
+    }
+    // string slice
+    {
+        let s = String::from("hello world");
+
+        let hello = &s[..5]; // 0..5 is the same as ..5
+        let world = &s[6..]; //6..s.len() same as 6..
+        let all = &s[..]; // same as &s
+
+        println!("{ }",first_word(&s));
+        println!("{ }",second_word(&s));
+
+        fn first_word(s: &String) -> &str {
+            let bytes = s.as_bytes();
+
+            for (i, &item) in bytes.iter().enumerate() {
+                if item == b' ' {
+                    return &s[..i];
+                }
+            }
+            &s[..]
+        }
+        fn second_word(s: &String) -> &str {
+            let bytes = s.as_bytes();
+            let mut x = (0,s.len());
+
+            for (i, &item) in bytes.iter().enumerate() {
+                if item == b' ' {
+                    if x.0 != 0 { x.1 = i }
+                    x.0 = i+1
+
+                }
+            }
+
+            &s[x.0..x.1]
+        }
     }
 }
 
