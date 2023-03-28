@@ -95,7 +95,14 @@ fn III() {
 
     let a = [1, 2, 3, 4, 5];
 
+    let slice = &a[1..3];
 
+    for i in &[2, 3] {
+        println!("{ }",i);
+    }
+    for i in slice {
+        println!("{ }",i);
+    }
 }
 
 fn II() {
