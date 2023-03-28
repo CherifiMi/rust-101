@@ -1,7 +1,11 @@
 use std::ops::Index;
 
 fn main() {
-    I();
+    II();
+}
+
+fn II() {
+
 }
 
 fn I() {
@@ -50,18 +54,20 @@ fn I() {
     }
 
     // Return Values and Scope
-    let s1 = give_ownership(); // gives return value to s1
-    let s2 = String::from("hii"); // s2 comes into scope
-    let s3 = take_and_give(s2); // takes s2 and gives back the return value to s3
+    {
+        let s1 = give_ownership(); // gives return value to s1
+        let s2 = String::from("hii"); // s2 comes into scope
+        let s3 = take_and_give(s2); // takes s2 and gives back the return value to s3
 
-    // s3 goes out of scope. s2 was moved. s1 goes out of scope
+        // s3 goes out of scope. s2 was moved. s1 goes out of scope
 
-    fn give_ownership() -> String {
-        let some_string = String::from("yoo");
-        some_string // some_string is moved out into the function that calls it
-    }
+        fn give_ownership() -> String {
+            let some_string = String::from("yoo");
+            some_string // some_string is moved out into the function that calls it
+        }
 
-    fn take_and_give(a_string: String) -> String {
-        a_string // a_string is returned and moved out to the calling function
+        fn take_and_give(a_string: String) -> String {
+            a_string // a_string is returned and moved out to the calling function
+        }
     }
 }
