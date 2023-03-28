@@ -13,8 +13,8 @@ fn III() {
         let first = first_word(&s);
         let second = second_word(&s);
 
-        println!("first word is { }", &s[0..first_word(&s)]);
-        println!("second word is{ }", &s[second.0..second.1]);
+        //println!("first word is { }", &s[0..first_word(&s)]);
+        //println!("second word is{ }", &s[second.0..second.1]);
 
         fn first_word(s: &String) -> usize {
             let bytes = s.as_bytes();
@@ -56,14 +56,14 @@ fn III() {
     }
     // string slice
     {
-        let s = String::from("hello world");
+        let s = String::from("We get the index for the end");
 
         let hello = &s[..5]; // 0..5 is the same as ..5
         let world = &s[6..]; //6..s.len() same as 6..
         let all = &s[..]; // same as &s
 
-        println!("{ }",first_word(&s));
-        println!("{ }",second_word(&s));
+        println!("first word is { }",first_word(&s));
+        println!("second word is { }",second_word(&s));
 
         fn first_word(s: &String) -> &str {
             let bytes = s.as_bytes();
@@ -81,9 +81,11 @@ fn III() {
 
             for (i, &item) in bytes.iter().enumerate() {
                 if item == b' ' {
-                    if x.0 != 0 { x.1 = i }
-                    x.0 = i+1
-
+                    if x.0 != 0 {
+                        x.1 = i;
+                        break
+                    }
+                    x.0 = i+1;
                 }
             }
 
