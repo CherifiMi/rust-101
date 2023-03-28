@@ -65,7 +65,7 @@ fn III() {
         println!("first word is { }",first_word(&s));
         println!("second word is { }",second_word(&s));
 
-        fn first_word(s: &String) -> &str {
+        fn first_word(s: &str) -> &str { // &str allows both str and string
             let bytes = s.as_bytes();
 
             for (i, &item) in bytes.iter().enumerate() {
@@ -92,6 +92,10 @@ fn III() {
             &s[x.0..x.1]
         }
     }
+
+    let a = [1, 2, 3, 4, 5];
+
+
 }
 
 fn II() {
