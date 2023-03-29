@@ -7,14 +7,42 @@
       <sourceFolder url="file://$MODULE_DIR$/II-gessing-game/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/III-consepts/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/IV-ownership/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/IX-errors/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/V-structs/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VI-enums/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VII-crates-modules/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VIII-collections/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/X-generics-traits-lifetime/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/XI-tests/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/XII-cmd-program/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/XIII-iterators-closures/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/XIV-cargo-crates/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/XIX-advanced/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/XV-smart-pointers/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/XVI-fearless-concurrency/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/XVII-OOP/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/XVIII-patterns-matching/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/XX-final-project/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/II-gessing-game/target" />
       <excludeFolder url="file://$MODULE_DIR$/V-structs/target" />
       <excludeFolder url="file://$MODULE_DIR$/IV-ownership/target" />
       <excludeFolder url="file://$MODULE_DIR$/III-consepts/target" />
       <excludeFolder url="file://$MODULE_DIR$/I-hello-cargo/target" />
       <excludeFolder url="file://$MODULE_DIR$/VI-enums/target" />
+      <excludeFolder url="file://$MODULE_DIR$/VII-crates-modules/target" />
+      <excludeFolder url="file://$MODULE_DIR$/VIII-collections/target" />
+      <excludeFolder url="file://$MODULE_DIR$/IX-errors/target" />
+      <excludeFolder url="file://$MODULE_DIR$/X-generics-traits-lifetime/target" />
+      <excludeFolder url="file://$MODULE_DIR$/XI-tests/target" />
+      <excludeFolder url="file://$MODULE_DIR$/XII-cmd-program/target" />
+      <excludeFolder url="file://$MODULE_DIR$/XIII-iterators-closures/target" />
+      <excludeFolder url="file://$MODULE_DIR$/XIV-cargo-crates/target" />
+      <excludeFolder url="file://$MODULE_DIR$/XIX-advanced/target" />
+      <excludeFolder url="file://$MODULE_DIR$/XV-smart-pointers/target" />
+      <excludeFolder url="file://$MODULE_DIR$/XVI-fearless-concurrency/target" />
+      <excludeFolder url="file://$MODULE_DIR$/XVII-OOP/target" />
+      <excludeFolder url="file://$MODULE_DIR$/XVIII-patterns-matching/target" />
+      <excludeFolder url="file://$MODULE_DIR$/XX-final-project/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
