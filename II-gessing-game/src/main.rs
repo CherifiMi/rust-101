@@ -2,7 +2,6 @@ use std::cmp::Ordering;
 use std::io;
 
 fn main() {
-
     println!("Guess the number");
     let rand = 29;
     loop {
@@ -11,13 +10,10 @@ fn main() {
             .read_line(&mut geuss)
             .expect("fail to read line");
 
-        let geuss: u32 =match geuss
-            .trim()
-            .parse()
-            {
-                Ok(num) => num,
-                Err(_)=>continue,
-            };
+        let geuss: u32 = match geuss.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
 
         println!("you gessed {geuss}");
 
@@ -27,7 +23,7 @@ fn main() {
             Ordering::Equal => {
                 println!("win");
                 break;
-            },
+            }
         }
     }
 }

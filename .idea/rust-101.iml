@@ -3,8 +3,18 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/I-hello-cargo/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/II-gessing-game/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/III-consepts/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/IV-ownership/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/V-structs/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VI-enums/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/II-gessing-game/target" />
+      <excludeFolder url="file://$MODULE_DIR$/V-structs/target" />
+      <excludeFolder url="file://$MODULE_DIR$/IV-ownership/target" />
+      <excludeFolder url="file://$MODULE_DIR$/III-consepts/target" />
+      <excludeFolder url="file://$MODULE_DIR$/I-hello-cargo/target" />
+      <excludeFolder url="file://$MODULE_DIR$/VI-enums/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

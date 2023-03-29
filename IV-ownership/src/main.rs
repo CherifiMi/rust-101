@@ -97,7 +97,7 @@ fn III() {
 
     let slice = &a[1..3];
 
-    for i in &[2, 3] {
+    for i in [2, 3] {
         println!("{ }",i);
     }
     for i in slice {
