@@ -1,7 +1,35 @@
 use std::io::Read;
 
 fn main() {
-    II()
+    III()
+}
+
+fn III() {
+    struct Rect{
+        width: u32,
+        height: u32
+    }
+    impl Rect{
+        fn area(&self) -> u32 {
+            self.width*self.height
+        }
+        fn width(&self) -> bool{
+            self.width>20
+        }
+        fn can_hold(&self,rect: &Rect) -> bool{
+            self.area()>=rect.area()
+        }
+    }
+
+    let rect = Rect{ width: 50, height: 30 };
+    let rec1 = Rect{ width: 60, height: 40 };
+    let rec2 = Rect{ width: 50, height: 20 };
+
+    println!("{ }", rect.area());
+    println!("{ }", rect.width());
+
+    println!("{ }", rect.can_hold(&rec1));
+    println!("{ }", rect.can_hold(&rec2));
 }
 
 fn II() {
