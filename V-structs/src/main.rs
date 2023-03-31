@@ -5,6 +5,7 @@ fn main() {
 }
 
 fn III() {
+    #[derive(Debug)]
     struct Rect{
         width: u32,
         height: u32
@@ -20,10 +21,22 @@ fn III() {
             self.area()>=rect.area()
         }
     }
+    impl Rect{
+        fn square(size: u32) -> Self {
+            Self {
+                width: size,
+                height: size,
+            }
+        }
+    }
 
     let rect = Rect{ width: 50, height: 30 };
     let rec1 = Rect{ width: 60, height: 40 };
     let rec2 = Rect{ width: 50, height: 20 };
+
+    let care = Rect::square(10);
+
+    dbg!(care);
 
     println!("{ }", rect.area());
     println!("{ }", rect.width());
