@@ -196,3 +196,37 @@ fn I() {
         }
     }
 }
+
+
+fn using_result(){
+
+    let mut s = String::from("i_love rust");
+    let first_index = first_word_index(&s);
+    let first_word = index_to_word(first_index, &s);
+
+    println!("{ }", first_word);
+
+    fn first_word_index(s: &String) -> usize {
+        let bytes = s.as_bytes();
+        for (i, &item) in bytes.iter().enumerate() {
+            if item == b' ' {
+                return i;
+            }
+        }
+        s.len()
+    }
+
+
+    fn index_to_word(word: usize, s: &String) -> String {
+        let mut v: Vec<u8> = Vec::new();
+        for i in 0..word {
+            v.push(s.as_bytes()[i]);
+        }
+        let s = String::from_utf8(v);
+
+        return match s {
+            Ok(n) => { n }
+            Err(_) => { String::new() }
+        }
+    }
+}
