@@ -60,28 +60,47 @@ fn I() {
     }
     {
         #[derive(Debug)]
-        enum Message{
+        enum Message {
             Quit,
-            Move{x:i32, y: i32},
+            Move { x: i32, y: i32 },
             Write(String),
-            ChangeColor(i32,i32,i32)
+            ChangeColor(i32, i32, i32),
         }
-        struct QuitMessage;
-        struct MoveMessage{
-            x: i32,
-            y: i32
-        }
-        struct WriteMessage(String);
-        struct ChangeColor(i32,i32,i32);
-
-        impl Message{
-            fn call(&self){
-
-                dbg!(self);
+        impl Message {
+            fn call(&self) {
+                match self {
+                    Message::Quit => {
+                        println!("quit")
+                    }
+                    Message::Move {x,y} => {
+                        println!("move {} {}", x, y)
+                    }
+                    Message::Write(s) => {
+                        println!("write { }", s)
+                    }
+                    Message::ChangeColor(a, b, c) => {
+                        println!("color {}", a + b + c)
+                    }
+                }
             }
         }
 
-        let m = Message::Write(String::from("hillo"));
-        m.call()
+        struct QuitMessage;
+        struct MoveMessage {
+            x: i32,
+            y: i32,
+        }
+        struct WriteMessage(String);
+        struct ChangeColor(i32, i32, i32);
+
+        let w = Message::Write(String::from("hillo"));
+        let c = Message::ChangeColor(3, 43, 2);
+        let m = Message::Move {x:5, y: 9 };
+        let q = Message::Quit;
+
+        w.call();
+        c.call();
+        m.call();
+        q.call()
     }
 }
