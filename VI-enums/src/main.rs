@@ -103,4 +103,44 @@ fn I() {
         m.call();
         q.call()
     }
+    {
+        let s = Some(5);
+        let x: Option<i32> = None;
+
+        match x {
+            None => {println!("null")}
+            Some(it) => {println!("{}", it)}
+        }
+    }
+    {
+        enum Coin {
+            Penny,
+            Nickel,
+            Dime,
+            Quarter,
+        }
+
+        println!("{}", value_in_cents(Coin::Nickel));
+        value_in_cents2(Coin::Penny);
+
+        fn value_in_cents(coin: Coin) -> u8 {
+            match coin {
+                Coin::Penny => 1,
+                Coin::Nickel => 5,
+                Coin::Dime => 10,
+                Coin::Quarter => 25,
+            }
+        }
+        fn value_in_cents2(coin: Coin) -> u8 {
+            match coin {
+                Coin::Penny => {
+                    println!("Lucky penny!");
+                    1
+                }
+                Coin::Nickel => 5,
+                Coin::Dime => 10,
+                Coin::Quarter => 25,
+            }
+        }
+    }
 }
