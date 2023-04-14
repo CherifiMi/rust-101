@@ -2,7 +2,7 @@ use std::net::Shutdown::Write;
 use std::string::FromUtf8Error;
 
 fn main() {
-    I();
+    III();
 }
 
 fn I() {
@@ -112,6 +112,8 @@ fn I() {
             Some(it) => {println!("{}", it)}
         }
     }
+}
+fn II(){
     {
         enum Coin {
             Penny,
@@ -144,6 +146,7 @@ fn I() {
         }
     }
     {
+        #[derive(Debug)]
         enum UsState{
             Alabama,
             Alaska,
@@ -155,8 +158,51 @@ fn I() {
             Quarter(UsState)
         }
 
+        value_in_cents(Coin::Quarter(UsState::Alaska));
+
         fn value_in_cents(coin: Coin) -> u8{
-            ma'
+            match coin {
+                Coin::Penny => 1,
+                Coin::Nickel => 5,
+                Coin::Dime => 10,
+                Coin::Quarter(state) => {
+                    println!("State quarter from {:?}!", state);
+                    25
+                }
+            }
         }
     }
+    {
+        let five = Some(5);
+        let six = plus_one(five);
+        let none = plus_one(None);
+
+        dbg!("{}", six);
+        dbg!("{}", none);
+
+        fn plus_one(x: Option<i32>)-> Option<i32>{
+            match x {
+                None => None,
+                Some(i) => Some(i+1)
+            }
+        }
+    }
+    {
+        let dice_roll = 9;
+        match dice_roll {
+            3 => add_fancy_hat(),
+            7 => remove_fancy_hat(),
+            other => move_player(other),    // use all other possibility
+            _ => move_one(),    // to all other  possibility, call the same fn
+            _ => (),            // to all other  possibility, do nothing
+        }
+
+        fn move_one(){}
+        fn add_fancy_hat() {}
+        fn remove_fancy_hat() {}
+        fn move_player(num_spaces: u8) {}
+    }
+}
+fn III(){
+
 }
