@@ -23,6 +23,7 @@
       <sourceFolder url="file://$MODULE_DIR$/XVII-OOP/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/XVIII-patterns-matching/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/XX-final-project/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VII-crates-modules/restaurant/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/II-gessing-game/target" />
       <excludeFolder url="file://$MODULE_DIR$/V-structs/target" />
       <excludeFolder url="file://$MODULE_DIR$/IV-ownership/target" />
@@ -43,6 +44,7 @@
       <excludeFolder url="file://$MODULE_DIR$/XVII-OOP/target" />
       <excludeFolder url="file://$MODULE_DIR$/XVIII-patterns-matching/target" />
       <excludeFolder url="file://$MODULE_DIR$/XX-final-project/target" />
+      <excludeFolder url="file://$MODULE_DIR$/VII-crates-modules/restaurant/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
