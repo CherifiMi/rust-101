@@ -10,10 +10,29 @@ fn HashMaps() {
 
     scores.insert("blue", 20);
     scores.insert("red", 40);
+    scores.insert("red", 60);
+
+    scores.entry("blue").or_insert(21);
+    scores.entry("yellow").or_insert(233);
 
     let blue_team = scores.get("blue").copied().unwrap_or(0);
-    dbg!(scores);
     dbg!(blue_team);
+
+    for(key, value) in &mut scores{
+        *value += 5;
+        println!("{key}: {value}");
+    }
+
+    //___________
+
+    let text = "mito is my name my name i mito the mito";
+    let mut map = HashMap::new();
+
+    for word in text.split_whitespace(){
+        let mut count = map.entry(word).or_insert(0);
+        *count+=1;
+        dbg!(word, count);
+    }
 }
 
 
