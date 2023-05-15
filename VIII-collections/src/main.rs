@@ -24,7 +24,7 @@ fn main() {
 */
 
 fn ex2() {
-    let s = String::from("apple");
+    let s = String::from("mito");
 
     let latin_s = {
         let vols = ["a","o","i","u","e"];
