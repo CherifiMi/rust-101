@@ -1,5 +1,9 @@
 fn main() {
-    Vectors()
+    Strings()
+}
+
+fn Strings() {
+    todo!()
 }
 
 fn Vectors() {
@@ -49,6 +53,11 @@ fn Vectors() {
 
     let calendar = vec![Sheet::Num(2003), Sheet::On(true), Sheet::Text(String::from("mito birthday")), Sheet::Num(15)];
     for i in calendar {
-        println!("{:#?}", i)
+        println!("{:#?}", i);
+        match i {
+            Sheet::Num(_) => {}
+            Sheet::Text(_) => {}
+            Sheet::On(_) => {}
+        }
     }
 }
