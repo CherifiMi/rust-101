@@ -3,10 +3,10 @@ fn main() {
 }
 
 fn StringsFn(){
-    let s = "lurem ipsum is a cool taxt";
+    let s = "my name is mito ";
 
     let word = |l: i32| -> &str {
-        let mut r = (-1, -1);
+        let mut r = (99, 99);
         let mut space_count = 0;
 
         for (i, &c) in s.as_bytes().iter().enumerate() {
@@ -14,16 +14,21 @@ fn StringsFn(){
                 space_count+=1;
                 println!("{i}");
             }
-            if space_count == l-1 && r.0 == -1 { r.0 = i }
-            if space_count == l && r.1 == -1 { r.1 = i}
+            if space_count == l-1 && r.0 == 99 { r.0 = i }
+            if space_count == l && r.1 == 99 { r.1 = i}
         }
-
         &s[r.0..r.1]
     };
 
     let s1 = word(1);
     let s2 = word(2);
-    println!("first word is {s1}, second is {s2}");
+    let s3 = word(3);
+    let s4 = word(4);
+
+    println!("first word is {s1}");
+    println!("first word is {s2}");
+    println!("first word is {s3}");
+    println!("first word is {s4}");
 }
 
 
