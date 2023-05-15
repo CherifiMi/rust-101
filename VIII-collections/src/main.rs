@@ -1,6 +1,31 @@
 fn main() {
-    Strings()
+    StringsFn()
 }
+
+fn StringsFn(){
+    let s = "lurem ipsum is a cool taxt";
+
+    let word = |l: i32| -> &str {
+        let mut r = (-1, -1);
+        let mut space_count = 0;
+
+        for (i, &c) in s.as_bytes().iter().enumerate() {
+            if c == b' ' {
+                space_count+=1;
+                println!("{i}");
+            }
+            if space_count == l-1 && r.0 == -1 { r.0 = i }
+            if space_count == l && r.1 == -1 { r.1 = i}
+        }
+
+        &s[r.0..r.1]
+    };
+
+    let s1 = word(1);
+    let s2 = word(2);
+    println!("first word is {s1}, second is {s2}");
+}
+
 
 fn Strings() {
     let data = "starting data".to_string();
