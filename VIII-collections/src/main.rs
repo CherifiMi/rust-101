@@ -1,6 +1,11 @@
 fn main() {
-    StringsFn()
+    HashMaps()
 }
+
+fn HashMaps() {
+    
+}
+
 
 fn StringsFn(){
     let s = "my name is mito ";
@@ -25,12 +30,11 @@ fn StringsFn(){
     let s3 = word(3);
     let s4 = word(4);
 
-    println!("first word is {s1}");
-    println!("first word is {s2}");
-    println!("first word is {s3}");
-    println!("first word is {s4}");
+    println!("{s1}");
+    println!("{s2}");
+    println!("{s3}");
+    println!("{s4}");
 }
-
 
 fn Strings() {
     let data = "starting data".to_string();
