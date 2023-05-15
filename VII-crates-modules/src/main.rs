@@ -1,7 +1,6 @@
-use crate::garden::fruit::Banana;
-use crate::garden::say_hi;
+use crate::garden::{say_hi, fruit::Banana};
 use crate::jnan::fruit2::Banana2;
-use crate::waten::fruit3::Dela3;
+use crate::waten::fruit3::*;
 
 pub mod garden{
     pub fn say_hi(){
