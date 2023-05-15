@@ -17,13 +17,12 @@ fn ex1() {
 
     let mode = {
         let mut map = HashMap::new();
-        for i in list.clone(){
+        for i in &list{
             let count = map.entry(i).or_insert(0);
             *count+=1;
         }
         map
     };
-
 
     dbg!(median);
     dbg!(mode);
