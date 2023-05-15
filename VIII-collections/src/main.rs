@@ -3,7 +3,8 @@ fn main() {
 }
 
 fn Strings() {
-    todo!()
+    let data = "starting data".to_string();
+    let s = String::new();
 }
 
 fn Vectors() {
