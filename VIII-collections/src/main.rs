@@ -1,9 +1,19 @@
+use std::arch::x86_64::_blci_u32;
+use std::collections::HashMap;
+
 fn main() {
     HashMaps()
 }
 
 fn HashMaps() {
-    
+    let mut scores = HashMap::new();
+
+    scores.insert("blue", 20);
+    scores.insert("red", 40);
+
+    let blue_team = scores.get("blue").copied().unwrap_or(0);
+    dbg!(scores);
+    dbg!(blue_team);
 }
 
 
