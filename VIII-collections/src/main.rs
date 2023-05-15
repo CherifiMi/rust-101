@@ -24,7 +24,22 @@ fn main() {
 */
 
 fn ex2() {
+    let s = String::from("apple");
 
+    let latin_s = {
+        let vols = ["a","o","i","u","e"];
+        let c1 = &s[0..1];
+        let rest = &s[1..s.len()];
+
+        if vols.contains(&c1){
+            format!("{s}_hay")
+        }else {
+            format!("{rest}_{c1}ay")
+        }
+
+    };
+
+    dbg!(latin_s);
 }
 
 fn ex1() {
