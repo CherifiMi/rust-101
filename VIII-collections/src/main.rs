@@ -1,11 +1,17 @@
 use std::arch::x86_64::_blci_u32;
 use std::collections::HashMap;
+use std::fmt::Debug;
+use std::io;
+use std::io::stdin;
+use std::str::SplitWhitespace;
 
 fn main() {
-    ex2()
+    ex3()
 }
 
 //region ex
+
+
 /*
 - ex1: Given a list of integers, use a vector and return the median (when sorted, the value in
     the middle position) and mode (the value that occurs most often;
@@ -22,6 +28,41 @@ fn main() {
      Then let the user retrieve a list of all people in a department or all people in
      the company by department, sorted alphabetically.
 */
+
+fn ex3() {
+    let mut map: HashMap<&str, Vec<&str>> = HashMap::new();
+
+    loop {
+        println!("enter command:");
+        let mut s = String::new();
+        stdin().read_line(&mut s).expect("");
+
+        let list: Vec<&str> = s.split(' ').collect();
+
+        let instruction = list[0];
+        let order1 = list[1];
+        let order2 = list[3];
+
+        if instruction == "add" {
+            let worker = map.entry(order2).or_insert(vec![]);
+            worker.push(order1);
+
+            println!("{} has been added to {}", order1, order2);
+        }
+        else if instruction == "get" {
+            if order1=="all" {
+                dbg!(&map);
+            }
+            else {
+                dbg!(&map.get(order1));
+            }
+        }
+        else {
+            println!("something went wrong")
+        }
+    }
+
+}
 
 fn ex2() {
     let s = String::from("mito");
