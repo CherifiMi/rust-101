@@ -6,16 +6,16 @@ fn main() {
 }
 
 fn ex1() {
-    let mut listX = vec![0, 2, 12, 123, 21, 21, 22, 22, 1, 22, 2, 34, 54, 88, 9, 0, 0];
+    let mut list = vec![0, 2, 12, 123, 21, 21, 22, 22, 1, 22, 2, 34, 54, 88, 9, 0, 0];
 
 
-    let mut median  = |mut list: Vec<i32>| -> i32 {
-        list.sort();
-        let mid_i = list.len()/2;
-        list[mid_i]
+    let mut median  = {
+        let mut v = list.clone();
+        v.sort();
+        v[list.len()/2]
     };
 
-    let mode = |list: Vec<i32>| -> HashMap<i32, i32>{
+    let mode = {
         let mut map = HashMap::new();
         for i in list.clone(){
             let count = map.entry(i).or_insert(0);
@@ -24,8 +24,9 @@ fn ex1() {
         map
     };
 
-    dbg!(median(listX.clone()));
-    dbg!(mode(listX.clone()));
+
+    dbg!(median);
+    dbg!(mode);
 }
 
 fn HashMaps() {
