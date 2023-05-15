@@ -4,7 +4,30 @@ fn main() {
 
 fn Strings() {
     let data = "starting data".to_string();
-    let s = String::new();
+    let data2 = String::from("starting data");
+    let mut s = String::new();
+
+    let mut hello = String::from("السلام عليكم");
+    hello.push_str(" means peace be upon you");
+    println!("{hello}");
+    s.push_str(&hello);
+    println!("{hello}");
+
+    let s1 = String::from("Hello, ");
+    let s2 = String::from("world!");
+    let s3 = s1 + &s2; // note s1 has been moved here and can no longer be used
+
+    let ss = format!("{s3} is {s2}");
+
+    let hil = &hello[0..4].to_string();
+    println!("{ }", &hil);
+
+    for i in "السلام عليكم".chars(){
+        println!("{} ", i)
+    }
+    for i in "السلام عليكم".bytes() {
+        println!("{}", i)
+    }
 }
 
 fn Vectors() {
