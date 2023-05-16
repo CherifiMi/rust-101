@@ -8,7 +8,7 @@ fn main() {
 
 fn err_propagating() {
 
-    match read_username() {
+    match read_username2() {
         Ok(a) => {
             println!("{}", a );
         }
@@ -17,6 +17,12 @@ fn err_propagating() {
         }
     }
 
+    fn read_username2() -> Result<String, Error> {
+        let mut username_file = File::open("hi.txt")?;
+        let mut username = String::new();
+        username_file.read_to_string(&mut username)?;
+        Ok(username)
+    }
     fn read_username() -> Result<String, Error> {
         let username_file_result = File::open("hi.txt");
         let mut username_file = match username_file_result {
