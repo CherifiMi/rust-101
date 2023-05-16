@@ -37,11 +37,11 @@ fn ex3() {
         let mut s = String::new();
         stdin().read_line(&mut s).expect("");
 
-        let list: Vec<&str> = s.split(' ').collect();
+        let list: Vec<&str> = s.split(' ').collect(); // fix this
 
-        let instruction = list[0];
-        let order1 = list[1];
-        let order2 = list[3];
+        let instruction = list[0].clone();
+        let order1 = list[1].clone();
+        let order2 = list[3].clone();
 
         if instruction == "add" {
             let worker = map.entry(order2).or_insert(vec![]);
