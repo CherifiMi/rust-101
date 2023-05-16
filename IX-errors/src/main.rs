@@ -8,9 +8,7 @@ fn main() {
 
 fn err_propagating() {
 
-    let text = "my name is boox\n
-                my fav is patato \n
-                yoo";
+    let text = "my name is boox\nmy fav is patato\nyoo";
 
     fn last_char_of_first_line(text: &str) -> Option<char>{
         text.lines().next()?.chars().last()
