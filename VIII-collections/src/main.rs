@@ -39,13 +39,18 @@ fn ex3() {
 
         let list: Vec<&str> = s.split(' ').collect(); // fix this
 
+        respond(map.clone(),list.clone())
+
+    }
+
+    fn respond(mut map: HashMap<&str, Vec<&str>>, list: Vec<&str>){
         let instruction = list[0].clone();
         let order1 = list[1].clone();
         let order2 = list[3].clone();
 
         if instruction == "add" {
-            let worker = map.entry(order2).or_insert(vec![]);
-            worker.push(order1);
+            let worker = map.entry(order2.clone()).or_insert(vec![]);
+            worker.push(order1.clone());
 
             println!("{} has been added to {}", order1, order2);
         }
