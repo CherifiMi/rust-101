@@ -22,6 +22,7 @@ fn III() {
     };
 
     println!("{ }",tweet.summarize());
+    println!("{ }",tweet.summarize_author());
     println!("{ }",article.summarize());
 
 }
