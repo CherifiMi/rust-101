@@ -27,6 +27,15 @@ pub struct Tweet {
     pub retweet: bool,
 }
 
+impl Summary for i32 {
+    fn summarize_author(&self) -> String {
+        format!("mito i32 {}", self)
+    }
+
+    fn summarize(&self) -> String {
+        format!("{} is the summary", self)
+    }
+}
 impl Summary for Tweet {
     fn summarize_author(&self) -> String {
         format!("this tweet is by {}", self.username)

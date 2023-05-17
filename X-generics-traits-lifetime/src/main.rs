@@ -22,8 +22,8 @@ fn III() {
         content: "".to_string(),
     };
 
-
-    dbg!(notify(&tweet));
+    let int = 15;
+    dbg!(notify(&int));
 
     println!("{ }",tweet.summarize());
     println!("{ }",tweet.summarize_author());
