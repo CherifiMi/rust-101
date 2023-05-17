@@ -1,4 +1,4 @@
-use X_generics_traits_lifetime::{NewsArticle, Summary, Tweet};
+use X_generics_traits_lifetime::{NewsArticle, notify, Summary, Tweet};
 
 fn main()
 {
@@ -22,10 +22,12 @@ fn III() {
         content: "".to_string(),
     };
 
+
+    dbg!(notify(&tweet));
+
     println!("{ }",tweet.summarize());
     println!("{ }",tweet.summarize_author());
     println!("{ }",article.summarize());
-    println!("{ }",tweet.notify());
 }
 //endregion
 
