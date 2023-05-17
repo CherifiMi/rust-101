@@ -47,4 +47,8 @@ impl Summary for Tweet {
 
 pub fn notify(item: &impl Summary) {
     println!("BREAKING NEWS!!! {}", item.summarize())
+
+}
+pub fn notify2<T: Summary>(item: &T){
+    println!("BREAKING NEWS!!! {}", item.summarize())
 }

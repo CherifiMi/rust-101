@@ -1,4 +1,4 @@
-use X_generics_traits_lifetime::{NewsArticle, notify, Summary, Tweet};
+use X_generics_traits_lifetime::{NewsArticle, notify, notify2, Summary, Tweet};
 
 fn main()
 {
@@ -21,9 +21,11 @@ fn III() {
         author: "".to_string(),
         content: "".to_string(),
     };
-
     let int = 15;
-    dbg!(notify(&int));
+
+    dbg!(notify2(&int));
+    dbg!(notify2(&tweet));
+    dbg!(notify2(&article));
 
     println!("{ }",tweet.summarize());
     println!("{ }",tweet.summarize_author());
