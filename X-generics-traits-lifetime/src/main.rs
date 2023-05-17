@@ -1,37 +1,66 @@
-
 fn main() {
     III();
 }
 
-fn III() {
+//region trait
+fn III() {}
 
+pub trait Summary {
+    fn summarize(&self) -> String;
 }
 
-fn II(){
-    #[derive(Debug)]
-    struct Dor<X1,Y1>{
-        x: X1,
-        y: Y1
+pub struct NewsArticle {
+    pub headline: String,
+    pub location: String,
+    pub author: String,
+    pub content: String,
+}
+
+impl Summary for NewsArticle {
+    fn summarize(&self) -> String {
+        format!("{}, by {} ({})", self.headline, self.author, self.location)
     }
-    impl <X1,Y1> Dor<X1, Y1>{
-        fn mixup<X2,Y2>(self, other: Dor<X2,Y2>) -> Dor<X1,Y2>{
-            Dor{
-                x:self.x,
-                y:other.y
+}
+
+struct Tweet {
+    pub username: String,
+    pub content: String,
+    pub reply: bool,
+    pub retweet: bool,
+}
+
+impl Summary for Tweet {
+    fn summarize(&self) -> String {
+        format!("{}: {}", self.username, self.content)
+    }
+}
+//endregion
+
+fn II() {
+    #[derive(Debug)]
+    struct Dor<X1, Y1> {
+        x: X1,
+        y: Y1,
+    }
+    impl<X1, Y1> Dor<X1, Y1> {
+        fn mixup<X2, Y2>(self, other: Dor<X2, Y2>) -> Dor<X1, Y2> {
+            Dor {
+                x: self.x,
+                y: other.y,
             }
         }
     }
 
-    let d1 = Dor{x: 5, y: 10.4};
-    let d2 = Dor{x: "mito", y: 'c'};
+    let d1 = Dor { x: 5, y: 10.4 };
+    let d2 = Dor { x: "mito", y: 'c' };
 
     dbg!(&d1.mixup(d2));
 
     //-------------------
 
-    enum Hix<T>{
+    enum Hix<T> {
         Yoo(T),
-        Hillo(T)
+        Hillo(T),
     }
 
     let x = Hix::Hillo("");
@@ -41,12 +70,12 @@ fn II(){
         Hix::Hillo(_) => {}
     }
     //---------------
-    struct Point<T>{
-        x:T,
-        y:T
+    struct Point<T> {
+        x: T,
+        y: T,
     }
-    impl <T> Point<T>{
-        fn x(&self) -> &T{
+    impl<T> Point<T> {
+        fn x(&self) -> &T {
             &self.x
         }
     }
@@ -56,14 +85,14 @@ fn II(){
         }
     }
 
-    let point:Point<i32> = Point{x: 5, y: 10};
+    let point: Point<i32> = Point { x: 5, y: 10 };
     let x = point.x();
     let y = point.y;
 
 
-    println!("{} {}",x,y);
+    println!("{} {}", x, y);
 
-    let fpoint: Point<f32> = Point{x:1.34,y : 2.2};
+    let fpoint: Point<f32> = Point { x: 1.34, y: 2.2 };
     fpoint.distance_from_origin();
 
     //-----------
