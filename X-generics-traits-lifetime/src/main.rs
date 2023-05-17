@@ -1,38 +1,29 @@
+use X_generics_traits_lifetime::{NewsArticle, Summary, Tweet};
+
+
 fn main() {
     III();
 }
 
 //region trait
-fn III() {}
+fn III() {
 
-pub trait Summary {
-    fn summarize(&self) -> String;
-}
+    let tweet = Tweet{
+        username: "mito".to_string(),
+        content: "i hate this world".to_string(),
+        reply: false,
+        retweet: false,
+    };
+    let article = NewsArticle{
+        headline: "".to_string(),
+        location: "".to_string(),
+        author: "".to_string(),
+        content: "".to_string(),
+    };
 
-pub struct NewsArticle {
-    pub headline: String,
-    pub location: String,
-    pub author: String,
-    pub content: String,
-}
+    println!("{ }",tweet.summarize());
+    println!("{ }",article.summarize());
 
-impl Summary for NewsArticle {
-    fn summarize(&self) -> String {
-        format!("{}, by {} ({})", self.headline, self.author, self.location)
-    }
-}
-
-struct Tweet {
-    pub username: String,
-    pub content: String,
-    pub reply: bool,
-    pub retweet: bool,
-}
-
-impl Summary for Tweet {
-    fn summarize(&self) -> String {
-        format!("{}: {}", self.username, self.content)
-    }
 }
 //endregion
 
