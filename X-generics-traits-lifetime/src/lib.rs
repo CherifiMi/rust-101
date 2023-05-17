@@ -2,10 +2,19 @@ use std::fmt::format;
 
 pub trait Summary {
     fn summarize_author(&self) -> String;
-    fn summarize(&self) -> String{
-     "(read more......)".to_string()
+    fn summarize(&self) -> String {
+        "(read more......)".to_string()
+    }
+    fn notify(item: &impl Summary) {
+        println!("BREAKING NEWS!!! {}", item.summarize())
+    }
+
+    fn notify2(){
+
     }
 }
+
+
 
 pub struct NewsArticle {
     pub headline: String,
@@ -31,8 +40,6 @@ impl Summary for Tweet {
     fn summarize_author(&self) -> String {
         format!("this tweet is by {}", self.username)
     }
-
-
     fn summarize(&self) -> String {
         format!("{}: {}", self.username, self.content)
     }

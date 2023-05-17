@@ -1,7 +1,7 @@
 use X_generics_traits_lifetime::{NewsArticle, Summary, Tweet};
 
-
-fn main() {
+fn main()
+{
     III();
 }
 
@@ -14,6 +14,7 @@ fn III() {
         reply: false,
         retweet: false,
     };
+
     let article = NewsArticle{
         headline: "".to_string(),
         location: "".to_string(),
@@ -24,7 +25,7 @@ fn III() {
     println!("{ }",tweet.summarize());
     println!("{ }",tweet.summarize_author());
     println!("{ }",article.summarize());
-
+    println!("{ }",tweet.notify());
 }
 //endregion
 
