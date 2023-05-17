@@ -1,4 +1,4 @@
-use X_generics_traits_lifetime::{NewsArticle, notify, notify2, Summary, Tweet};
+use X_generics_traits_lifetime::{NewsArticle, notify, notify2, notify3, notify4, return_summary, Summary, Tweet};
 
 fn main()
 {
@@ -7,6 +7,7 @@ fn main()
 
 //region trait
 fn III() {
+
 
     let tweet = Tweet{
         username: "mito".to_string(),
@@ -23,13 +24,15 @@ fn III() {
     };
     let int = 15;
 
-    dbg!(notify2(&int));
-    dbg!(notify2(&tweet));
+    dbg!(notify4(&int));
+    dbg!(notify(&tweet));
     dbg!(notify2(&article));
 
     println!("{ }",tweet.summarize());
     println!("{ }",tweet.summarize_author());
     println!("{ }",article.summarize());
+
+    dbg!(return_summary().summarize());
 }
 //endregion
 
