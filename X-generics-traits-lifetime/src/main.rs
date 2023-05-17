@@ -3,8 +3,7 @@ fn main() {
     III();
 }
 
-fn III() {
-
+fn III() {//
 }
 
 fn II(){
