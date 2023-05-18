@@ -8,7 +8,7 @@ struct Rectangle {
 
 impl Rectangle {
     fn can_hold(&self, other: &Rectangle) -> bool {
-        self.width > other.width && self.height > other.height
+        self.width < other.width && self.height < other.height
     }
 }
 
@@ -34,6 +34,16 @@ mod tests {
         };
         let smaller = Rectangle{ width: 5, height: 1 };
         assert!(larger.can_hold(&smaller))
+    }
+
+    #[test]
+    fn larg_can_not_hold_small(){
+        let larger = Rectangle{
+            width: 8,
+            height: 7
+        };
+        let smaller = Rectangle{ width: 5, height: 1 };
+        assert!(!smaller.can_hold(&larger))
     }
 
     #[test]
