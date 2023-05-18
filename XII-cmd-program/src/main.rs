@@ -1,12 +1,12 @@
-use std::{env, fs};
+use std::{env, fs, process};
 
 fn main() {
     let args: Vec<String> = env::args().collect();
 
-    let config = match Config::build(&args) {
-        Ok(item) => { item }
-        Err(err) => { println!("{}", err) }
-    };
+    let config =Config::build(&args).unwrap_or_else(|err|{
+        println!("problem parsing args: {}", err);
+        process::exit(1);
+    });
 
     println!("Searching for {}", config.query);
     println!("In file {}", config.file_path);
