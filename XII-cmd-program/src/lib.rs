@@ -2,7 +2,18 @@ use std::error::Error;
 use std::fs;
 
 #[cfg(test)]
-mod tests;
+mod tests{
+    use super::*;
+
+    #[test]
+    fn it_works2() -> Result<(), String> {
+        if 2 + 2 == 4 {
+            Ok(())
+        } else {
+            Err(String::from("two plus two does not equal four"))
+        }
+    }
+}
 
 pub struct Config {
     query: String,
