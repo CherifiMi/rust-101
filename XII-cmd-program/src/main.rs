@@ -8,7 +8,7 @@ fn main() {
         process::exit(1);
     });
 
-    run(config);
+    config.run()
 }
 
 struct Config {
@@ -26,12 +26,12 @@ impl Config {
         let file_path = args[2].clone();
         Ok(Config { query, file_path })
     }
+    fn run(self){
+        println!("Searching for {}", self.query);
+        println!("In file {}", self.file_path);
+        let content = fs::read_to_string(self.file_path)
+            .expect("should have been able to read the text");
+        println!("{content}");
+    }
 }
 
-fn run(config: Config){
-    println!("Searching for {}", config.query);
-    println!("In file {}", config.file_path);
-    let content = fs::read_to_string(config.file_path)
-        .expect("should have been able to read the text");
-    println!("{content}");
-}
