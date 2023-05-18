@@ -27,6 +27,16 @@ mod tests {
     }
 
     #[test]
+    fn larg_can_hold_small(){
+        let larger = Rectangle{
+            width: 8,
+            height: 7
+        };
+        let smaller = Rectangle{ width: 5, height: 1 };
+        assert!(larger.can_hold(&smaller))
+    }
+
+    #[test]
     fn another(){
         panic!("it failed")
     }
