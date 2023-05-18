@@ -1,0 +1,1 @@
+D:\mito\resources\rust\rust-101\XII-cmd-program\target\debug\XII-cmd-program.exe: D:\mito\resources\rust\rust-101\XII-cmd-program\src\lib.rs D:\mito\resources\rust\rust-101\XII-cmd-program\src\main.rs
