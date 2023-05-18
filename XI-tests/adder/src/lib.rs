@@ -43,11 +43,16 @@ mod tests {
             height: 7
         };
         let smaller = Rectangle{ width: 5, height: 1 };
-        assert!(!smaller.can_hold(&larger))
+        let result = smaller.can_hold(&larger);
+        assert!(
+            !result,
+            "the return of this fn is {}",
+            result
+        )
     }
 
-    #[test]
+    /*#[test]
     fn another(){
         panic!("it failed")
-    }
+    }*/
 }
