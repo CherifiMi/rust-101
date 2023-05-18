@@ -9,10 +9,14 @@ fn main() {
         process::exit(1);
     });
 
-    config.run().unwrap_or_else(|err|{
+    if let Err(e) = config.run(){
+        println!("problem running: {}", e);
+        process::exit(1);
+    }
+    /*config.run().unwrap_or_else(|err|{
         println!("problem running: {}", err);
         process::exit(1);
-    });;
+    });;*/
 }
 
 struct Config {
