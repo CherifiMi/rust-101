@@ -2,10 +2,13 @@ use X_generics_traits_lifetime::{NewsArticle, notify, notify2, notify3, notify4,
 
 fn main()
 {
-    III();
+    IV();
 }
 
-//region trait
+fn IV() {
+
+}
+
 fn III() {
 
 
@@ -34,7 +37,6 @@ fn III() {
 
     dbg!(return_summary().summarize());
 }
-//endregion
 
 fn II() {
     #[derive(Debug)]

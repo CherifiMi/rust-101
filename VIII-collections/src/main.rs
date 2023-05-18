@@ -30,42 +30,37 @@ fn main() {
 
 
 fn ex3() {
-    let mut map: HashMap<&str, Vec<&str>> = HashMap::new();
+    let mut map: HashMap<String, Vec<String>> = HashMap::new();
 
     loop {
         println!("enter command:");
         let mut s = String::new();
         stdin().read_line(&mut s).expect("");
 
-        let list: Vec<&str> = s.split(' ').collect(); // fix this
+        let list: Vec<&str> = s.as_str().split_whitespace().collect();
 
-        respond(map.clone(),list.clone())
-
-    }
-
-    fn respond(mut map: HashMap<&str, Vec<&str>>, list: Vec<&str>){
         let instruction = list[0].clone();
-        let order1 = list[1].clone();
-        let order2 = list[3].clone();
 
         if instruction == "add" {
-            let worker = map.entry(order2.clone()).or_insert(vec![]);
-            worker.push(order1.clone());
+            let worker = map.entry(list[3].clone().to_string()).or_insert(vec![]);
+            worker.push(list[1].clone().to_string());
 
-            println!("{} has been added to {}", order1, order2);
+            dbg!(&map);
+            println!("{} has been added to {}", list[1].clone(), list[3].clone());
         }
         else if instruction == "get" {
-            if order1=="all" {
+            if list[1]=="all" {
                 dbg!(&map);
             }
             else {
-                dbg!(&map.get(order1));
+                dbg!(&map.get(list[1]));
             }
         }
         else {
             println!("something went wrong")
         }
     }
+
 
 }
 
