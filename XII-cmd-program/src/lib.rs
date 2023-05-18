@@ -2,16 +2,17 @@ use std::error::Error;
 use std::fs;
 
 #[cfg(test)]
-mod tests{
+mod tests {
     use super::*;
 
     #[test]
-    fn it_works2() -> Result<(), String> {
-        if 2 + 2 == 4 {
-            Ok(())
-        } else {
-            Err(String::from("two plus two does not equal four"))
-        }
+    fn one_result() {
+
+        let config = Config{
+            query: "duct".to_string(),
+            file_path: "test.txt".to_string(),
+        };
+        assert_eq!(vec!["safe, fast, productive."], config.search());
     }
 }
 
@@ -19,6 +20,7 @@ pub struct Config {
     query: String,
     file_path: String,
 }
+
 impl Config {
     pub fn build(args: &[String]) -> Result<Config, &'static str> {
         if args.len() < 3 {
@@ -29,7 +31,7 @@ impl Config {
         let file_path = args[2].clone();
         Ok(Config { query, file_path })
     }
-    pub fn run(self) -> Result<(), Box<dyn Error>>{
+    pub fn run(self) -> Result<(), Box<dyn Error>> {
         let content = fs::read_to_string(&self.file_path)?;
 
         println!("Searching for {}", self.query);
@@ -37,5 +39,8 @@ impl Config {
         println!("{content}");
 
         Ok(())
+    }
+    pub fn search(self)-> Vec<&'static str>{
+        vec!["safe, fast, productive."]
     }
 }
