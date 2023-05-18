@@ -25,6 +25,8 @@
       <sourceFolder url="file://$MODULE_DIR$/XX-final-project/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VII-crates-modules/restaurant/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VII-crates-modules/trees/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/XI-tests/adder/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/XI-tests/adder/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/II-gessing-game/target" />
       <excludeFolder url="file://$MODULE_DIR$/V-structs/target" />
       <excludeFolder url="file://$MODULE_DIR$/IV-ownership/target" />
@@ -47,6 +49,7 @@
       <excludeFolder url="file://$MODULE_DIR$/XX-final-project/target" />
       <excludeFolder url="file://$MODULE_DIR$/VII-crates-modules/restaurant/target" />
       <excludeFolder url="file://$MODULE_DIR$/VII-crates-modules/trees/target" />
+      <excludeFolder url="file://$MODULE_DIR$/XI-tests/adder/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
