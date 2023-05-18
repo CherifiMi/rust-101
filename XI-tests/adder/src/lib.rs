@@ -59,6 +59,7 @@ mod tests {
     }
     #[test]
     #[should_panic]
+    #[ignore]
     fn another(){
         panic!("it failed")
     }
