@@ -51,8 +51,24 @@ mod tests {
         )
     }
 
-    /*#[test]
+    #[test]
+    #[should_panic(expected = "index")]
+    fn out_of_bound(){
+        let list = vec![1,2,3];
+        list[3];
+    }
+    #[test]
+    #[should_panic]
     fn another(){
         panic!("it failed")
-    }*/
+    }
+
+    #[test]
+    fn it_works2() -> Result<(), String> {
+        if 2 + 2 == 4 {
+            Ok(())
+        } else {
+            Err(String::from("two plus two does not equal four"))
+        }
+    }
 }
