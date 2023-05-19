@@ -7,8 +7,7 @@ mod tests {
 
     #[test]
     fn one_result() {
-
-        let config = Config{
+        let config = Config {
             query: "duct".to_string(),
             file_path: "test.txt".to_string(),
         };
@@ -40,7 +39,7 @@ impl Config {
 
         Ok(())
     }
-    pub fn search(self)-> Vec<&'static str>{
+    pub fn search(self) -> Vec<&'static str> {
         vec!["safe, fast, productive."]
     }
 }
