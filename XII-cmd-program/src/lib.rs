@@ -4,11 +4,12 @@ use std::fs;
 #[cfg(test)]
 mod tests;
 
+///-------------
+
 pub struct Config {
     query: String,
     file_path: String,
 }
-
 impl Config {
     pub fn build(args: &[String]) -> Result<Config, &'static str> {
         if args.len() < 3 {
@@ -27,8 +28,5 @@ impl Config {
         println!("{content}");
 
         Ok(())
-    }
-    pub fn search(self) -> Vec<&'static str> {
-        vec!["safe, fast, productive."]
     }
 }
