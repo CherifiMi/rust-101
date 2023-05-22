@@ -1,33 +1,49 @@
 fn main() {
-
+    I()
 }
 
-enum ShirtColor{
+fn I() {
+    let store = Inventory { shirts: vec![ShirtColor::Blue, ShirtColor::Blue, ShirtColor::Red] };
+
+    let user_pref1 = Some(ShirtColor::Red);
+    let giveaway1 = store.giveaway(user_pref1);
+    println!("the user with pref {:?} gets {:?}",user_pref1, giveaway1);
+
+    let user_pref2 = Some(ShirtColor::Blue);
+    let giveaway2 = store.giveaway(user_pref2);
+    println!("the user2 with pref {:?} gets {:?}",user_pref2, giveaway2);
+}
+
+// region closure 1
+#[derive(Debug, PartialEq, Copy, Clone)]
+enum ShirtColor {
     Red,
-    Blue
-}
-struct Inventory{
-    shirts: Vec<ShirtColor>
+    Blue,
 }
 
+struct Inventory {
+    shirts: Vec<ShirtColor>,
+}
 impl Inventory {
-    fn giveaway(&self, user_preference: Option<ShirtColor>) -> ShirtColor{
+    fn giveaway(&self, user_preference: Option<ShirtColor>) -> ShirtColor {
         user_preference.unwrap_or_else(|| self.most_stocked())
     }
     fn most_stocked(&self) -> ShirtColor {
-        let mut num_red  = 0;
-        let mut num_blue  = 0;
+        let mut num_red = 0;
+        let mut num_blue = 0;
 
-        for color in &self.shirts{
+        for color in &self.shirts {
             match color {
-                ShirtColor::Red => num_red+=1,
-                ShirtColor::Blue => num_blue+=1,
+                ShirtColor::Red => num_red += 1,
+                ShirtColor::Blue => num_blue += 1,
             }
         }
-        if num_red>num_blue{
+        if num_red > num_blue {
             ShirtColor::Red
         } else {
-          ShirtColor::Blue
+            ShirtColor::Blue
         }
     }
 }
+
+// endregion
