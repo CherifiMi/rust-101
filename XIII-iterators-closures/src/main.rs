@@ -1,5 +1,62 @@
+use std::thread;
+use std::time::Duration;
+
 fn main() {
-    I()
+    IV()
+}
+
+
+fn III() {
+
+    /// doesnt borrow
+    /// ```kotlin
+    /// let list = vec![1,2,3];
+    /// println!("before closure: {:?}", list);
+    ///
+    /// let only_borrow = || println!("from closure {:?}", list);
+    ///
+    /// println!("before calling closure: {:?}", list);
+    /// only_borrow();
+    /// println!("before closure: {:?}", list);
+    /// ```
+
+    /// mut closure
+    /// ```kotlin
+    /// let mut list = vec![1,2,3];
+    /// println!("before closure: {:?}", list);
+    /// let mut borrows_mutably  = || list.push(5);
+    /// borrows_mutably();
+    /// println!("before closure: {:?}", list);
+    /// ```
+
+    let list = vec![1,2,3];
+    println!("before closure: {:?}", list);
+
+    thread::spawn(move || println!("from thread: {:?}", list))
+        .join()
+        .unwrap();
+
+}
+
+fn II() {
+    let expansive_closure = |num: u32| -> u32{
+        println!("calcilating slowly...");
+        thread::sleep(Duration::from_secs(2));
+        num
+    };
+
+    //fn add_one1(x:u32) -> u32 { x + 1 }
+    //let add_one2 = |x:u32| -> u32 { x + 1 };
+    //let add_one3 = |x| { x + 1 };
+    let add_one4 = |x| x+1;
+
+
+    let r_c = |x| x;
+
+    dbg!(add_one4(5));
+    dbg!(expansive_closure(12));
+    dbg!(r_c(14));
+    //dbg!(r_c(String::from("hillo"))); wont work
 }
 
 fn I() {
