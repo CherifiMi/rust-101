@@ -1,14 +1,16 @@
-use X_generics_traits_lifetime::{NewsArticle, notify, notify2, notify3, notify4, return_summary, Summary, Tweet};
+use X_generics_traits_lifetime::{
+    notify, notify2, notify3, notify4, return_summary, NewsArticle, Summary, Tweet,
+};
 
-fn main()
-{
-    IV();
+fn main() {
+
+
+    //IV();
 }
 
 fn IV() {
-
-    fn longest<'a>(x: &'a str, y: &'a str)-> &'a str{
-        if x.len()>y.len() {
+    fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+        if x.len() > y.len() {
             x
         } else {
             y
@@ -19,23 +21,16 @@ fn IV() {
         let string1 = String::from("abcd");
         let string2 = "xyz";
 
-        let result = longest_with_an_announcement(
-            string1.as_str(),
-            string2,
-            "Today is someone's birthday!",
-        );
+        let result =
+            longest_with_an_announcement(string1.as_str(), string2, "Today is someone's birthday!");
         println!("The longest string is {}", result);
     }
 
     use std::fmt::Display;
 
-    fn longest_with_an_announcement<'a, T>(
-        x: &'a str,
-        y: &'a str,
-        ann: T,
-    ) -> &'a str
-        where
-            T: Display,
+    fn longest_with_an_announcement<'a, T>(x: &'a str, y: &'a str, ann: T) -> &'a str
+    where
+        T: Display,
     {
         println!("Announcement! {}", ann);
         if x.len() > y.len() {
@@ -44,20 +39,17 @@ fn IV() {
             y
         }
     }
-
 }
 
 fn III() {
-
-
-    let tweet = Tweet{
+    let tweet = Tweet {
         username: "mito".to_string(),
         content: "i hate this world".to_string(),
         reply: false,
         retweet: false,
     };
 
-    let article = NewsArticle{
+    let article = NewsArticle {
         headline: "".to_string(),
         location: "".to_string(),
         author: "".to_string(),
@@ -69,9 +61,9 @@ fn III() {
     dbg!(notify(&tweet));
     dbg!(notify2(&article));
 
-    println!("{ }",tweet.summarize());
-    println!("{ }",tweet.summarize_author());
-    println!("{ }",article.summarize());
+    println!("{ }", tweet.summarize());
+    println!("{ }", tweet.summarize_author());
+    println!("{ }", article.summarize());
 
     dbg!(return_summary().summarize());
 }
@@ -128,7 +120,6 @@ fn II() {
     let point: Point<i32> = Point { x: 5, y: 10 };
     let x = point.x();
     let y = point.y;
-
 
     println!("{} {}", x, y);
 
