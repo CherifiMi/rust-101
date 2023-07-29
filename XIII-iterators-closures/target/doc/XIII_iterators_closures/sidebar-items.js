@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":[["ShirtColor",""]],"fn":[["I",""],["II",""],["III",""],["IV",""],["main",""]],"struct":[["Inventory",""]]};
